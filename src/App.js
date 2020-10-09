@@ -13,17 +13,17 @@ const testMenu = [
 const customer = {
   icon: null,
   id: '123456',
-  fName: 'Chan',
-  lName: 'Tai Man',
+  firstName: 'Chan',
+  lastName: 'Tai Man',
   gender: 'M',
   phone: '9888 8888',
-  IDcard: 'A123456(7)',
-  createTime: '2020-10-01 14:01:01',
+  HKID: 'A123456(7)',
+  create: '2020-10-01 14:01:01',
   email: 'chan@email.com',
-  bDay: '1990-01-01',
+  birthday: '1990-01-01',
   occupation: 'teacher',
-  IDcardPic: 'image.png',
-  updateTime: '2020-10-06 15:01:02',
+  HKIDPic: 'image.png',
+  update: '2020-10-06 15:01:02',
 };
 
 function App() {

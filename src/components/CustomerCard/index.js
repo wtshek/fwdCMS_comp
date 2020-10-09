@@ -7,21 +7,30 @@ import PropTypes from "prop-types"
 //TODO: map info
 
 export default function CustomerCard({ info }) {
-  const {
-    icon,
-    id,
-    fname,
-    lname,
-    gender,
-    phone,
-    IDcard,
-    createTime,
-    email,
-    bDay,
-    occupation,
-    IDcardPic,
-    updateTime,
-  } = info;
+  const {icon} = info;
+
+  const infoKeyVal = [
+    {key: "id", value: "Account ID"},
+    {key: "email", value: "Email"},
+    {key: "firstName", value: "First Name"},
+    {key: "lastName", value: "Last Name"},
+    {key: "gender", value: "Gender"},
+    {key: "birthday", value: "Date of Birth"},
+    {key: "phone", value: "Mobile Phone"},
+    {key: "occupation", value: "Occupation"},
+    {key: "HKID", value: "HKID Card No"},
+    {key: "HKIDPic", value: "HKID Card No"},
+    {key: "create", value: "Created At"},
+    {key: "update", value: "Updated At"},
+  ]
+
+  const mapInfo = () => {
+    return infoKeyVal.map((item)=>{
+      return(
+      <div key={`${info.id}-${item.key}`}>{item.value} : {info[item.key]}</div>
+      )
+    })
+  }
 
   return (
     <div className={style.container}>
@@ -30,20 +39,9 @@ export default function CustomerCard({ info }) {
         {icon ? <img src={`${icon}`} alt={`${icon}`} /> : <Image src="/PersonIcon.svg" />}
       </div>
       <div className={style.detail}>
-        <div>Account ID: {id}</div>
-        <div>Email: {email}</div>
-        <div>First Name: {fname}</div>
-        <div>Last Name: {lname}</div>
-        <div>Gender: {gender}</div>
-        <div>Date of Birth: {bDay}</div>
-        <div>Mobile Phone: {phone}</div>
-        <div>Occupation: {occupation}</div>
-        <div>HKID Card No: {IDcard}</div>
-        <div>HKID Card No: {IDcardPic}</div>
-        <div>Created At: {createTime}</div>
-        <div>Updated At: {updateTime}</div>
+        {mapInfo()}
       </div>
-      <div className={style.status}>
+      <div className={style.select}>
         <label for='status'>Status:&nbsp;&nbsp;</label>
         <select name='status' id='status'>
           <option value='activate'>Activate</option>
@@ -53,8 +51,8 @@ export default function CustomerCard({ info }) {
       <div className={style.updateBt}>
         <Button>Update</Button>
       </div>
-      <div className={style.memebership}>
-      <label for='status'>Status:&nbsp;&nbsp;</label>
+      <div className={style.select}>
+        <label for='status'>Status:&nbsp;&nbsp;</label>
         <select name='status' id='status'>
           <option value='activate'>Mother</option>
           <option value='deactivate'>Deactivate</option>

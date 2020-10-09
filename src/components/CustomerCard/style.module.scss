@@ -37,12 +37,20 @@
   }
 }
 
-.status {
+.select {
   margin-top: 23px;
+  select {
+    border: 1px solid $theme-color;
+    color: $theme-color;
+    font-family: Arial;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 14px;
+  }
 }
 
 .updateBt {
-  margin: 41px 0 49px;
+  margin: 41px 0 26px;
 
   button {
     color: white;
