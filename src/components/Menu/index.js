@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import style from './style.module.scss';
 import cx from 'classnames';
+import PropTypes from "prop-types"
 
 export default function Menu({ items, Logo }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,11 @@ export default function Menu({ items, Logo }) {
           className={`${style.menuSections} ${
             isOpen ? style.visible : style.invisible
           }`}
+          key={title}
         >
           <div className={style.title}>{title}</div>
           {items.map((item) => {
-            return <div className={style.sectionItem}>{item}</div>;
+            return <div key={`${title}-${item}`} className={style.sectionItem}>{item}</div>;
           })}
         </div>
       );
@@ -56,4 +58,9 @@ export default function Menu({ items, Logo }) {
       />
     </div>
   );
+}
+
+Menu.propTypes = {
+  items: PropTypes.array.isRequired,
+  logo: PropTypes.string
 }

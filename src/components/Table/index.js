@@ -4,6 +4,7 @@ import style from './style.module.scss';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import cx from 'classnames';
+import PropTypes from "prop-types"
 
 const { SearchBar } = Search;
 
@@ -27,6 +28,7 @@ const pageButtonRenderer = ({ page, active, onPageChange }) => {
 
 export default function Table({ data, cols, header }) {
   const options = { pageButtonRenderer };
+  
   return (
     <div>
       <div className={style.title}>{header}</div>
@@ -48,4 +50,9 @@ export default function Table({ data, cols, header }) {
       </ToolkitProvider>
     </div>
   );
+}
+
+Table.propTypes = {
+  data : PropTypes.array.isRequired,
+  cols: PropTypes.array.isRequired
 }

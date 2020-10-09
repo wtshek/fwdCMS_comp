@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.module.scss';
 import { ReactComponent as AdminSVG } from '../../assets/Admin.svg';
 import { ReactComponent as Door } from '../../assets/Door.svg';
+import PropTypes from "prop-types"
 
 export default function Header({ Logo, email }) {
   return (
@@ -14,4 +15,9 @@ export default function Header({ Logo, email }) {
       </div>
     </div>
   );
+}
+
+Header.propTypes = {
+  logo : PropTypes.string,
+  email: PropTypes.string
 }

@@ -1,6 +1,10 @@
 import React from 'react';
 import style from './style.module.scss';
 import { ReactComponent as PerosnSVG } from '../../assets/PersonIcon.svg';
+import { Button } from 'react-bootstrap';
+import PropTypes from "prop-types"
+
+//TODO: map info
 
 export default function CustomerCard({ info }) {
   const {
@@ -40,13 +44,26 @@ export default function CustomerCard({ info }) {
         <div>Updated At: {updateTime}</div>
       </div>
       <div className={style.status}>
-        <label for='status'>Status: </label>
+        <label for='status'>Status:&nbsp;&nbsp;</label>
         <select name='status' id='status'>
-          <option value='active'>Activate</option>
+          <option value='activate'>Activate</option>
+          <option value='deactivate'>Deactivate</option>
         </select>
       </div>
-      <div className={style.updateBt}></div>
-      <div className={style.memebership}></div>
+      <div className={style.updateBt}>
+        <Button>Update</Button>
+      </div>
+      <div className={style.memebership}>
+      <label for='status'>Status:&nbsp;&nbsp;</label>
+        <select name='status' id='status'>
+          <option value='activate'>Mother</option>
+          <option value='deactivate'>Deactivate</option>
+        </select>
+      </div>
     </div>
   );
+}
+
+CustomerCard.propTypes = {
+  info: PropTypes.object.isRequired
 }
