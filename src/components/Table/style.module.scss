@@ -1,0 +1,46 @@
+@import '~/react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+@import '~/react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css';
+@import '~/react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+@import '../../theme/index.scss';
+
+.title {
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  color: $theme-color;
+  text-align: left;
+}
+
+.container {
+  // fill search bar to whole container
+  label {
+    width: 100%;
+    margin: 32px 0;
+  }
+
+  hr {
+    display: none;
+  }
+}
+
+.pageBt {
+  border: solid 1px $theme-color !important;
+  justify-self: baseline;
+
+  * {
+    color: $theme-color;
+  }
+}
+
+.pageBt.active {
+  background-color: $theme-color;
+
+  a {
+    color: #ffffff;
+  }
+}
+
+// move table page list to right
+.container ul {
+  justify-content: flex-end;
+}

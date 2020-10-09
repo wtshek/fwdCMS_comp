@@ -1,0 +1,38 @@
+@import '../../theme/index.scss';
+
+.container {
+  padding: 40px 18.9vw 59px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  color: $theme-color;
+}
+
+.icon {
+  justify-content: center;
+  display: flex;
+  margin-top: 53px;
+}
+
+.detail {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 7.8vw;
+
+  div {
+    margin-top: 23px;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
