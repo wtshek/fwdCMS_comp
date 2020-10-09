@@ -1,17 +1,16 @@
 import React from 'react';
 import style from './style.module.scss';
-import { ReactComponent as AdminSVG } from '../../assets/Admin.svg';
-import { ReactComponent as Door } from '../../assets/Door.svg';
+import {Image} from "react-bootstrap"
 import PropTypes from "prop-types"
 
-export default function Header({ Logo, email }) {
+export default function Header({ logo, email }) {
   return (
     <div className={style.container}>
-      <Logo />
+      <Image src={logo} />
       <div className={style.loginInfo}>
-        <AdminSVG />
-        <div>{email}</div>
-        <Door />
+      <Image src="/Admin.svg" />
+      <div>{email}</div>
+      <Image src="/Door.svg" />
       </div>
     </div>
   );

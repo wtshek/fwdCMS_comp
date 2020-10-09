@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import style from './style.module.scss';
 import cx from 'classnames';
 import PropTypes from "prop-types"
+import {Image} from "react-bootstrap"
 
-export default function Menu({ items, Logo }) {
+export default function Menu({ items, logo }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const onToggleButton = () => {
@@ -38,7 +39,7 @@ export default function Menu({ items, Logo }) {
         className={isOpen ? cx(style.container, style.open) : style.container}
       >
         <section className={style.header}>
-          {isOpen ? <Logo className={style.logo} /> : ''}
+          {isOpen ? <Image src={logo} className={style.logo} /> : ''}
           <div
             className={isOpen ? cx(style.navBt, style.open) : style.navBt}
             onClick={onToggleButton}

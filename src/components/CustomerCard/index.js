@@ -1,6 +1,6 @@
 import React from 'react';
+import {Image} from "react-bootstrap";
 import style from './style.module.scss';
-import { ReactComponent as PerosnSVG } from '../../assets/PersonIcon.svg';
 import { Button } from 'react-bootstrap';
 import PropTypes from "prop-types"
 
@@ -27,7 +27,7 @@ export default function CustomerCard({ info }) {
     <div className={style.container}>
       <div className={style.header}>Customer Information</div>
       <div className={style.icon}>
-        {icon ? <img src={`${icon}`} alt={`${icon}`} /> : <PerosnSVG />}
+        {icon ? <img src={`${icon}`} alt={`${icon}`} /> : <Image src="/PersonIcon.svg" />}
       </div>
       <div className={style.detail}>
         <div>Account ID: {id}</div>

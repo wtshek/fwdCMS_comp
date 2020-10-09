@@ -2,8 +2,6 @@ import React from 'react';
 import Menu from './components/Menu';
 import Header from './components/Header';
 import CustomerCard from './components/CustomerCard';
-import { ReactComponent as LogoCoverted } from './assets/FWD_coverted.svg';
-import { ReactComponent as Logo } from './assets/FWD.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './App.module.scss';
 
@@ -31,9 +29,9 @@ const customer = {
 function App() {
   return (
     <div className={style.container}>
-      <Menu items={testMenu} Logo={LogoCoverted} />
+      <Menu items={testMenu} logo="/FWD_converted.svg" />
       <div className={style.content}>
-        <Header Logo={Logo} email={'admin@company.com'} />
+        <Header logo="/FWD.svg" email='admin@company.com' />
         <CustomerCard info={customer} />
       </div>
     </div>
