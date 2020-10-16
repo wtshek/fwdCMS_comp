@@ -1,0 +1,27 @@
+.layout {
+  margin: 0 32.4vw 90px 10.7vw;
+
+  .index {
+    margin-right: 3.5vw;
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+
+  .serviceInfoCard {
+    margin-top: 35px;
+    display: flex;
+  }
+
+  .genDesc {
+    margin-top: 67px;
+    display: flex;
+
+    label {
+      margin-right: 1.7vw;
+    }
+  }
+
+  .btContainer {
+    margin: 55px 0 0 4.6vw;
+  }
+}

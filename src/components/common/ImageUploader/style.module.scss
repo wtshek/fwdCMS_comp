@@ -1,0 +1,18 @@
+@import '../../../theme/variable';
+
+#fileUploader {
+  display: none;
+}
+
+.loader__label {
+  background: $theme-color;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px;
+  width: 6.8vw;
+}
+
+.img {
+  width: 4.4vw;
+  height: 4.4vw;
+}

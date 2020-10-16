@@ -1,0 +1,9 @@
+@import '../../../theme/variable';
+
+.textarea {
+  border: 2px solid $theme-color;
+  border-radius: 5px;
+  width: 100%;
+  height: 60px;
+  resize: none;
+}

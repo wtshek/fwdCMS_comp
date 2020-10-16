@@ -3,9 +3,11 @@ import style from './style.module.scss';
 import cx from 'classnames';
 import PropTypes from "prop-types"
 import {Image} from "react-bootstrap"
+import CollapseMenu from "../CollapseMenu"
 
 export default function Menu({ items, logo }) {
   const [isOpen, setIsOpen] = useState(false);
+  
 
   const onToggleButton = () => {
     setIsOpen(!isOpen);
@@ -14,6 +16,7 @@ export default function Menu({ items, logo }) {
   const onCloseMenu = () => {
     setIsOpen(false);
   };
+
 
   const renderMenu = () => {
     return items.map(({ title, items }) => {
@@ -24,10 +27,7 @@ export default function Menu({ items, logo }) {
           }`}
           key={title}
         >
-          <div className={style.title}>{title}</div>
-          {items.map((item) => {
-            return <div key={`${title}-${item}`} className={style.sectionItem}>{item}</div>;
-          })}
+          <CollapseMenu title={title} items={items}/>
         </div>
       );
     });
@@ -39,7 +39,8 @@ export default function Menu({ items, logo }) {
         className={isOpen ? cx(style.container, style.open) : style.container}
       >
         <section className={style.header}>
-          {isOpen ? <Image src={logo} className={style.logo} /> : ''}
+
+          {/* cross and burger icon */}
           <div
             className={isOpen ? cx(style.navBt, style.open) : style.navBt}
             onClick={onToggleButton}
@@ -48,6 +49,10 @@ export default function Menu({ items, logo }) {
             <div />
             <div />
           </div>
+
+          {/* LOGO */}
+          {isOpen ? <Image src={logo} className={style.logo} /> : ''}
+
         </section>
         <section>{renderMenu()}</section>
       </nav>

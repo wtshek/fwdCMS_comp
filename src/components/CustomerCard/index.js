@@ -3,8 +3,8 @@ import {Image} from "react-bootstrap";
 import style from './style.module.scss';
 import { Button } from 'react-bootstrap';
 import PropTypes from "prop-types"
+import PageHeader from "../common/PageHeader"
 
-//TODO: map info
 
 export default function CustomerCard({ info }) {
   const {icon} = info;
@@ -34,7 +34,7 @@ export default function CustomerCard({ info }) {
 
   return (
     <div className={style.container}>
-      <div className={style.header}>Customer Information</div>
+      <PageHeader>Customer Information</PageHeader>
       <div className={style.icon}>
         {icon ? <img src={`${icon}`} alt={`${icon}`} /> : <Image src="/PersonIcon.svg" />}
       </div>

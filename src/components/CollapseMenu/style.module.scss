@@ -1,0 +1,38 @@
+.container {
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px 1.5vw;
+    position: relative;
+    margin: 0 -1.6vw;
+    background-color: #f3bb90;
+    display: flex;
+    justify-content: space-between;
+
+    .arrow {
+      transform: rotate(0);
+      transition: 0.25s ease-in-out;
+    }
+
+    .upward {
+      transform: rotate(180deg);
+      transition: 0.25s ease-in-out;
+    }
+  }
+
+  .collapse {
+    height: 0px;
+    overflow-y: hidden;
+    transition: 0.25s ease-in-out;
+  }
+
+  .expand {
+    height: auto;
+    transition: 0.25s ease-in-out;
+  }
+
+  .sectionItem {
+    margin-top: 10px;
+    color: #ffffff;
+  }
+}

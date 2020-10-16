@@ -1,14 +1,9 @@
 import React from 'react';
-import Menu from './components/Menu';
-import Header from './components/Header';
-import CustomerCard from './components/CustomerCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './App.module.scss';
+import ServiceInfoPage from "./pages/ServiceInfo"
 
-const testMenu = [
-  { title: 'Redeem Code', items: ['Code List', 'Code List', 'Code List'] },
-  { title: 'Payment', items: ['record'] },
-];
+
 
 const customer = {
   icon: null,
@@ -26,14 +21,11 @@ const customer = {
   update: '2020-10-06 15:01:02',
 };
 
+
 function App() {
   return (
     <div className={style.container}>
-      <Menu items={testMenu} logo="/FWD_converted.svg" />
-      <div className={style.content}>
-        <Header logo="/FWD.svg" email='admin@company.com' />
-        <CustomerCard info={customer} />
-      </div>
+      <ServiceInfoPage/>
     </div>
   );
 }
